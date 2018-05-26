@@ -1,4 +1,4 @@
-extends RigidBody
+extends KinematicBody
 #Variables
 var global = "root/global"
 
@@ -6,6 +6,7 @@ var X = 0.00
 var Y = 0.00
 
 var speed = 5
+var gravity = -9.8
 var moving = true
 var MOUSESPEED = 0.005
 var JUMP_VEL = 12
@@ -31,14 +32,7 @@ func _input(event):
 func _process(delta):
 	var is_on_ground = playerfeet.is_colliding()
 	var on_top = playerfeet.get_collider()
-	#Section for jumping
-	if is_on_ground:
-		jumping = false
-	if Input.is_key_pressed(KEY_SPACE) and not jumping:
-		var velocity = get_linear_velocity()
-		velocity.y = JUMP_VEL
-		set_linear_velocity(velocity)
-		jumping = true
+	move_and_collide(Vector3(0, gravity*delta, 0))
 	#Section for basic movement.
 	if Input.is_key_pressed(KEY_W):
 		translate(Vector3(0, 0, speed*delta))
