@@ -7,7 +7,6 @@ Features
 - Walking
 - Looking Around
 - Colliding
-- More Walking
 
 Missing Features
 - Jumping
