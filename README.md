@@ -3,7 +3,7 @@ A first-person shooter asset for the Godot Engine.
 
 Updated for Godot 3.1
 
-####Pre-requisites to use this.
+#### Pre-requisites to use this.
 
 - Set the input map for the following actions.
     + "movement_forward"
@@ -13,14 +13,14 @@ Updated for Godot 3.1
     + "movement_jump"
     + "flashlight"
 
-####Features
+#### Features
 
 - Walking
 - Looking Around
 - Colliding
 - Jumping
 
-####Missing Features
+#### Missing Features
 
 - Interaction
 - Standing on Rigid Bodies.
