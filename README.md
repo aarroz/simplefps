@@ -1,28 +1,23 @@
 # simplefps
-A first-person shooter asset for the Godot Engine.
 
-Updated for Godot 3.1
+A  simple first-person shooter asset for the Godot Engine. Ready for immediate use when added to a 3D game.
 
-#### Pre-requisites to use this.
-
-- Set the input map for the following actions.
-    + "movement_forward"
-    + "movement_backward"
-    + "movement_left"
-    + "movement_right"
-    + "movement_jump"
-    + "flashlight"
+Updated for Godot 3.2.3
 
 #### Features
 
-- Walking
-- Looking Around
-- Colliding
-- Jumping
+- Walking with WASD
+- Looking Around with Mouse
+- Colliding with Physics
+- Jumping with Spacebar
+- Standing on Rigid Bodies
 
-#### Missing Features
+#### Default Keymap
 
-- Interaction
-- Standing on Rigid Bodies.
+WASD = Movement
+
+F = Flashlight
+
+Space = Jump
 
 [![Icon](simplefps-icon.png)]
