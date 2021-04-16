@@ -45,13 +45,13 @@ func process_input(delta):
 
 	var input_movement_vector = Vector2()
 
-	if Input.is_action_pressed("movement_forward"):
+	if Input.is_key_pressed(KEY_W):
 		input_movement_vector.y += 1
-	if Input.is_action_pressed("movement_backward"):
+	if Input.is_key_pressed(KEY_S):
 		input_movement_vector.y -= 1
-	if Input.is_action_pressed("movement_left"):
+	if Input.is_key_pressed(KEY_A):
 		input_movement_vector.x -= 1
-	if Input.is_action_pressed("movement_right"):
+	if Input.is_key_pressed(KEY_D):
 		input_movement_vector.x += 1
 
 	input_movement_vector = input_movement_vector.normalized()
@@ -63,7 +63,7 @@ func process_input(delta):
 	# ----------------------------------
 	# Jumping
 	if is_on_floor():
-		if Input.is_action_just_pressed("movement_jump"):
+		if Input.is_key_pressed(KEY_SPACE):
 			vel.y = JUMP_SPEED
 	# ----------------------------------
 
@@ -75,15 +75,6 @@ func process_input(delta):
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	# ----------------------------------
-
-# ----------------------------------
-# Turning the flashlight on/off
-	if Input.is_action_just_pressed("flashlight"):
-		if flashlight.is_visible_in_tree():
-			flashlight.hide()
-		else:
-			flashlight.show()
-# ----------------------------------
 
 func process_movement(delta):
 	dir.y = 0
@@ -116,3 +107,12 @@ func _input(event):
 		var camera_rot = rotation_helper.rotation_degrees
 		camera_rot.x = clamp(camera_rot.x, -80, 80)
 		rotation_helper.rotation_degrees = camera_rot
+
+# ----------------------------------
+# Turning the flashlight on/off
+	if Input.is_key_pressed(KEY_F):
+		if flashlight.is_visible_in_tree():
+			flashlight.hide()
+		else:
+			flashlight.show()
+# ----------------------------------
