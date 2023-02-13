@@ -1,36 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://dgpjxoygnvyy4"]
 
-[ext_resource path="res://assets/simple_fpsplayer/Player.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://Player.gd" id="1_4oyu5"]
 
-[sub_resource type="CapsuleShape" id=1]
-height = 2.0
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_euj4i"]
 
-[node name="Player" type="KinematicBody"]
-input_ray_pickable = false
-script = ExtResource( 1 )
+[node name="Player" type="CharacterBody3D"]
+disable_mode = 2
+floor_max_angle = 0.802851
+script = ExtResource("1_4oyu5")
 
-[node name="collision_body" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 1 )
+[node name="body" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_euj4i")
 
-[node name="rotation_helper" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+[node name="rotation_helper" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="Camera" type="Camera" parent="rotation_helper"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
-keep_aspect = 0
-doppler_tracking = 2
-current = true
-fov = 90.0
-
-[node name="Flashlight" type="SpotLight" parent="rotation_helper"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
-visible = false
-light_energy = 3.0
-light_bake_mode = 0
-spot_range = 20.0
-spot_angle = 16.079
-
-[node name="playerfeet" type="RayCast" parent="."]
-enabled = true
-cast_to = Vector3( 0, -2.2, 0 )
+[node name="Camera3D" type="Camera3D" parent="rotation_helper"]

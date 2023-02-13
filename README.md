@@ -2,7 +2,7 @@
 
 A  simple first-person shooter asset for the Godot Engine. Ready for immediate use when added to a 3D game.
 
-Updated for Godot 3.2.3
+Updated & Tested for Godot 4.0 RC 1
 
 #### Features
 
