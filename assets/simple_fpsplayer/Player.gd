@@ -13,10 +13,12 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var camera
 var rotation_helper
 var dir = Vector3.ZERO
+var flashlight
 
 func _ready():
 	camera = $rotation_helper/Camera3D
 	rotation_helper = $rotation_helper
+	flashlight = $rotation_helper/Camera3D/flashlight_player
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -37,6 +39,14 @@ func _input(event):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	# Flashlight toggle. Defaults to F on Keyboard.
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_F:
+			if flashlight.is_visible_in_tree() and not event.echo:
+				flashlight.hide()
+			elif not event.echo:
+				flashlight.show()
 
 func _physics_process(delta):
 	# Add the gravity. Pulls value from project settings.

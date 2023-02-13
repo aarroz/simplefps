@@ -16,3 +16,11 @@ shape = SubResource("CapsuleShape3D_euj4i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="rotation_helper"]
+
+[node name="flashlight_player" type="SpotLight3D" parent="rotation_helper/Camera3D"]
+visible = false
+light_energy = 3.0
+light_bake_mode = 0
+spot_range = 10.0
+spot_angle = 15.0
+spot_angle_attenuation = 1.56917
