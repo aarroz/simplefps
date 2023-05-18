@@ -14,14 +14,11 @@ Updated & Tested for Godot 4.0.2 Stable
 
 #### Default Keymap
 
-WASD = Movement
-
-Shift + WASD = Sprint Movement
-
-F = Flashlight
-
-E = Physics Grab
-
-Space = Jump
+- WASD = Movement
+- Shift + WASD = Sprint Movement
+- F = Toggle Flashlight
+- E = Grab physics object (Rigid Body by default)
+  - Left-Click to throw held object
+- Space = Jump
 
 [![Icon](simplefps-icon.png)]
