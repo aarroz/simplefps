@@ -6,7 +6,7 @@ Updated & Tested for Godot 4.0.2 Stable
 
 #### Features
 
-- Walking with WASD
+- Walking with Input Map strings (Godot default is the arrow keys)
 - Looking Around with Mouse
 - Interacting with Physics
 - Jumping with Spacebar
@@ -14,8 +14,8 @@ Updated & Tested for Godot 4.0.2 Stable
 
 #### Default Keymap
 
-- WASD = Movement
-- Shift + WASD = Sprint Movement
+- Arrow Keys = Movement
+- Shift + Arrow Keys = Sprint Movement
 - F = Toggle Flashlight
 - E = Grab physics object (Rigid Body by default)
   - Left-Click to throw held object
